@@ -1,0 +1,9 @@
+# `.gitignore`
+
+# Node.js関連
+node_modules/
+.env
+
+# SQLiteデータベースファイル
+*.db
+*.sqlite
