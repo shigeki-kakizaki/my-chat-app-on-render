@@ -7,7 +7,7 @@ const sqlite3 = require('sqlite3').verbose();
 
 // 2. データベースファイルへのパスを指定
 // './chat.db' は、db_setup.js と同じディレクトリに chat.db というファイルを作成/接続する意味
-const DB_PATH = './chat.db';
+const DB_PATH = process.env.DB_PATH || './chat.db';
 
 
 // 3. データベースに接続
