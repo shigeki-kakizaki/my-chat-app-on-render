@@ -36,7 +36,6 @@ const db = new sqlite3.Database(DB_PATH, sqlite3.OPEN_READWRITE | sqlite3.OPEN_C
                 
                 // オプション: 初期データを挿入してみる（テーブルが空の場合のみ）
                 // db.get() は1行のデータを取得する
-                /*
                 db.get("SELECT COUNT(*) AS count FROM messages", (countErr, row) => {
                     if (countErr) {
                         console.error("[DB Setup ERROR] 初期データ挿入チェック失敗:", countErr.message);
@@ -71,15 +70,6 @@ const db = new sqlite3.Database(DB_PATH, sqlite3.OPEN_READWRITE | sqlite3.OPEN_C
                                 console.log("[DB Setup] データベース接続を閉じました。");
                             }
                         });
-                    }
-                });
-                */
-               // 初期データ挿入をコメントアウトした場合、ここで接続を閉じます
-                db.close((closeErr) => {
-                    if (closeErr) {
-                        console.error("[DB Setup ERROR] データベース切断失敗 (初期データ挿入スキップ時):", closeErr.message);
-                    } else {
-                        console.log("[DB Setup] データベース接続を閉じました (初期データ挿入スキップ時)。");
                     }
                 });
             }
