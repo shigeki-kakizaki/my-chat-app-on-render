@@ -2,12 +2,12 @@
 
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // SQLite3モジュールの読み込み
 const sqlite3 = require('sqlite3').verbose();
 // データベースファイルへのパス
-const DB_PATH = './chat.db'; // データベースファイル名を指定
+const DB_PATH = process.env.DB_PATH ||'/var/data/chat.db'; // データベースファイル名を指定
 
 // データベース接続オブジェクトのPromise化ヘルパー関数
 // これにより、async/await でデータベース操作を同期的に書けるようになります
@@ -103,7 +103,7 @@ app.post('/api/messages', async (req, res) => {
 
 // --- サーバーの起動 ---
 app.listen(port, () => {
-    console.log(`Backend server running at http://localhost:${port}`);
-    console.log(`Open your browser to: http://localhost:${port}/`); // フロントエンドのURL
-    console.log('Ctrl+C でサーバーを停止できます。');
+    // サーバー起動時のメッセージも、ポート変数を使うように修正
+    console.log(`Backend server running on port ${port}`);
+    console.log(`Open your browser to: http://localhost:${port}/ (development)`);
 });
