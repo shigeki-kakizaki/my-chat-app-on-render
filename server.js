@@ -7,7 +7,7 @@ const port = process.env.PORT || 3000;
 // SQLite3モジュールの読み込み
 const sqlite3 = require('sqlite3').verbose();
 // データベースファイルへのパス
-const DB_PATH = process.env.DB_PATH ||'chat.db'; // データベースファイル名を指定
+const DB_PATH = process.env.DB_PATH ||'./chat.db'; // データベースファイル名を指定
 
 // データベース接続オブジェクトのPromise化ヘルパー関数
 // これにより、async/await でデータベース操作を同期的に書けるようになります
