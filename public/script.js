@@ -6,7 +6,7 @@ const sendMessageBtn = document.getElementById('sendMessageBtn');
 const messageList = document.getElementById('messageList');
 
 // 2. バックエンドAPIのURL定義
-const API_BASE_URL = 'http://localhost:3000/api/messages'; // バックエンドAPIのエンドポイント
+const API_BASE_URL = 'https://my-chat-app-on-render-1.onrender.com/api/messages'; // バックエンドAPIのエンドポイント
 
 // 3. メッセージをHTMLリストに追加する関数
 function addMessageToDOM(message) {
