@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "setup-db": "node db_setup.js" // db_setup.jsがmessagesテーブルを作成する
+    "setup-db": "node db_setup.js"
   },
   "keywords": [],
   "author": "",
